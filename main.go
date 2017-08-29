@@ -1,18 +1,18 @@
 package main
 
 import (
-	"net/http"
 	"fmt"
+	"net/http"
+
 	"github.com/gorilla/mux"
-	"log"
 )
 
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", endpoint)
-	log.Fatal(http.ListenAndServe(":3000", r))
+	http.ListenAndServe(":3000", r)
 }
 
-func endpoint(w http.ResponseWriter, r *http.Request)  {
+func endpoint(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprint(w, "Hello world\n")
 }
