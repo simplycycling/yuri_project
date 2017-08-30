@@ -3,14 +3,11 @@ package main
 import (
 	"fmt"
 	"net/http"
-
-	"github.com/gorilla/mux"
 )
 
 func main() {
-	r := mux.NewRouter()
-	r.HandleFunc("/", endpoint)
-	http.ListenAndServe(":3000", r)
+	http.HandleFunc("/", endpoint)
+	http.ListenAndServe(":3000", nil)
 }
 
 func endpoint(w http.ResponseWriter, r *http.Request) {
@@ -19,3 +16,4 @@ func endpoint(w http.ResponseWriter, r *http.Request) {
 
 // First assignment by Yuri, a simple app that will return "Hello World"
 // when called by cURL.
+// Revised to use native http router
