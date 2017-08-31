@@ -28,4 +28,6 @@ func endpoint(w http.ResponseWriter, r *http.Request) {
 
 // First assignment by Yuri, a simple app that will return "Hello World"
 // when called by cURL.
-// Revised to use native http router
+// Attempting to rewrite so that a url query hello?name=Roger returns
+// Hello Roger. Not quite there yet, but I think I have a piece of the
+// puzzle - the url parsing. Now I have to figure out how to parse the actual request.
